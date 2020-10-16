@@ -3,15 +3,22 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
+# Streamlite 
 st.title('Automated Storyteller')
 
+max_lenght = st.selectbox(
+    'How long do you want the story to be?',
+    [50, 100, 200, 400]
+)
 
-INPUT_TEXT = "As far as I am concerned, I will"
-MAX_LENGHT = 50
+input_text = st.text_input(
+    label='Write a beggining to the story...',
+)
 
+# Text generator
 text_generator = pipeline("text-generation")
 
-generated_text = text_generator(INPUT_TEXT, max_length=MAX_LENGHT, do_sample=False)[0][
+generated_text = text_generator(input_text, max_length=max_lenght, do_sample=True)[0][
     "generated_text"
 ]
 
