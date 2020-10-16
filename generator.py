@@ -1,7 +1,5 @@
 from transformers import pipeline
 import streamlit as st
-import numpy as np
-import pandas as pd
 
 # Streamlite 
 st.title('Automated Storyteller')
