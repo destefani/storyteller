@@ -10,15 +10,16 @@ max_lenght = st.selectbox(
 )
 
 input_text = st.text_input(
-    label='Write a beggining to the story...',
+    label='Write a beginning to the story...',
 )
 
 # Text generator
-text_generator = pipeline("text-generation")
+if input_text:
+    text_generator = pipeline("text-generation")
 
-generated_text = text_generator(input_text, max_length=max_lenght, do_sample=True)[0][
-    "generated_text"
-]
+    generated_text = text_generator(input_text, max_length=max_lenght, do_sample=True)[0][
+        "generated_text"
+    ]
 
-st.write(generated_text)
+    st.write(generated_text)
 
