@@ -1,2 +1,2 @@
 # gpt2-storyteller
-GPT-2 based text generation web application.
+GPT-2 based text generation Streamlit application.
