@@ -9,7 +9,7 @@ st.write('This is Machine Learning based automatic story generator.\
 
 max_lenght = st.selectbox(
     'How long do you want the story to be?',
-    [50, 100, 200, 400]
+    [50, 100]
 )
 
 input_text = st.text_input(
