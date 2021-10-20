@@ -1,5 +1,5 @@
-from transformers import pipeline
 import streamlit as st
+from text_generator import generator
 
 # Streamlite 
 st.title('Automated Storyteller')
@@ -18,9 +18,7 @@ input_text = st.text_input(
 
 # Text generator
 if input_text:
-    text_generator = pipeline("text-generation")
-
-    generated_text = text_generator(input_text, max_length=max_lenght, do_sample=True)[0][
+    generated_text = generator(input_text, max_lenght=max_lenght, do_sample=True)[0][
         "generated_text"
     ]
 
