@@ -1,5 +1,5 @@
 import streamlit as st
-from text_generator import generator
+from text_generator import text_generator
 
 def main():
     st.title('Automated Storyteller')
@@ -18,7 +18,7 @@ def main():
 
     # Text generator
     if input_text:
-        generated_text = generator(input_text, max_lenght=max_lenght, do_sample=True)[0][
+        generated_text = text_generator(input_text, max_lenght=max_lenght, do_sample=True)[0][
             "generated_text"
         ]
 
